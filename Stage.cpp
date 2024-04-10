@@ -20,9 +20,9 @@ void Stage::Initialize()
 
 void Stage::Update()
 {
-	if (FindObject("Obstacle") == nullptr) {
+	/*if (FindObject("Obstacle") == nullptr) {
 		Instantiate<Obstacle>(this);
-	}
+	}*/
 }
 
 void Stage::Draw()

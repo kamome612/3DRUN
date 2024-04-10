@@ -20,17 +20,17 @@ void Obstacle::Initialize()
 	SphereCollider* collision = new SphereCollider({ 0,0.3,0 }, 0.3f);
 	AddCollider(collision);
 	//位置と向きの調整
-	int x = rand() % 3;
+	int x = rand() % 3;//乱数
 	switch (x) {
-	case 0:
+	case 0://〇〇無 パターン
 		transA = -2;
 		transB = 0;
 		break;
-	case 1:
+	case 1://無〇〇 パターン
 		transA = 0;
 		transB = 2;
 		break;
-	case 2:
+	case 2://〇無〇 パターン
 		transA = -2;
 		transB = 2;
 		break;

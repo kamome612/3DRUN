@@ -129,6 +129,7 @@
       <Filter>Scene\Play</Filter>
     </ClCompile>
     <ClCompile Include="Obstacle.cpp" />
+    <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -222,6 +223,7 @@
       <Filter>Scene\Play</Filter>
     </ClInclude>
     <ClInclude Include="Obstacle.h" />
+    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">
