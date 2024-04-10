@@ -15,13 +15,14 @@ Stage::~Stage()
 void Stage::Initialize()
 {
 	Instantiate<Road>(this);
-	for (int i = 0; i < 2; i++) {
-		Instantiate<Obstacle>(this);
-	}
+	Instantiate<Obstacle>(this);
 }
 
 void Stage::Update()
 {
+	if (FindObject("Obstacle") == nullptr) {
+		Instantiate<Obstacle>(this);
+	}
 }
 
 void Stage::Draw()
