@@ -1,16 +1,16 @@
 #pragma once
 #include "Engine/GameObject.h"
-//プレイヤー
-class Player :
+//障害物(パックマン)
+class Obstacle :
     public GameObject
 {
-    int hPlayer_;
+    int hObs_;
 public:
     //コンストラクタ
-    Player(GameObject* parent);
+    Obstacle(GameObject* parent);
 
     //デストラクタ
-    ~Player();
+    ~Obstacle();
 
     //初期化
     void Initialize() override;
@@ -23,8 +23,5 @@ public:
 
     //開放
     void Release() override;
-
-    //当たり判定
-    void OnCollision(GameObject* pTarget) override;
 };
 

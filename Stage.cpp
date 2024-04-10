@@ -1,5 +1,6 @@
 #include "Stage.h"
 #include "Road.h"
+#include "Obstacle.h"
 #include "Engine/Model.h"
 
 Stage::Stage(GameObject* parent)
@@ -14,6 +15,9 @@ Stage::~Stage()
 void Stage::Initialize()
 {
 	Instantiate<Road>(this);
+	for (int i = 0; i < 2; i++) {
+		Instantiate<Obstacle>(this);
+	}
 }
 
 void Stage::Update()

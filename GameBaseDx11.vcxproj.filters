@@ -125,7 +125,10 @@
     <ClCompile Include="Stage.cpp">
       <Filter>Scene\Play</Filter>
     </ClCompile>
-    <ClCompile Include="Road.cpp" />
+    <ClCompile Include="Road.cpp">
+      <Filter>Scene\Play</Filter>
+    </ClCompile>
+    <ClCompile Include="Obstacle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -215,7 +218,10 @@
     <ClInclude Include="Stage.h">
       <Filter>Scene\Play</Filter>
     </ClInclude>
-    <ClInclude Include="Road.h" />
+    <ClInclude Include="Road.h">
+      <Filter>Scene\Play</Filter>
+    </ClInclude>
+    <ClInclude Include="Obstacle.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">

@@ -15,8 +15,9 @@ void PlayScene::Initialize()
 {
 	Instantiate<Stage>(this);
 	Instantiate<Player>(this);
-	Camera::SetPosition(XMFLOAT3(0, 5, -5));
-	Camera::SetTarget(XMFLOAT3(0, 0, 3));
+	//カメラの視点変更
+	Camera::SetPosition(XMFLOAT3(0, 4, -5));
+	Camera::SetTarget(XMFLOAT3(0, 0, 5));
 }
 
 //更新

@@ -1,5 +1,6 @@
 #pragma once
 #include "Engine/GameObject.h"
+//áŠQ•¨‚âƒvƒŒƒCƒ„[‚Ì‚¢‚é“¹
 class Road :
     public GameObject
 {

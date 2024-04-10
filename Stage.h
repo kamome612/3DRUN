@@ -1,5 +1,6 @@
 #pragma once
 #include "Engine/GameObject.h"
+//ステージのもろもろ
 class Stage :
     public GameObject
 {
