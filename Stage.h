@@ -4,6 +4,8 @@
 class Stage :
     public GameObject
 {
+    double timer_;
+    double rTimer_;
 public:
     //コンストラクタ
     Stage(GameObject* parent);

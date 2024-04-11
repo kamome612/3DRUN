@@ -1,14 +1,13 @@
 #pragma once
 #include "Engine/GameObject.h"
-
-//クリアシーンを管理するクラス
-class ClearScene : public GameObject
+class GameoverScene :
+    public GameObject
 {
-	int cPict_;
+	int gPict_;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
-	ClearScene(GameObject* parent);
+	GameoverScene(GameObject* parent);
 
 	//初期化
 	void Initialize() override;
@@ -22,3 +21,4 @@ public:
 	//開放
 	void Release() override;
 };
+

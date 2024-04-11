@@ -5,7 +5,7 @@ class Obstacle :
     public GameObject
 {
     int hObs_;
-    int transA, transB;
+    double timer_;
 public:
     //コンストラクタ
     Obstacle(GameObject* parent);

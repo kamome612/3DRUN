@@ -5,6 +5,7 @@ class Player :
     public GameObject
 {
     int hPlayer_;
+    double timer_;
 public:
     //コンストラクタ
     Player(GameObject* parent);

@@ -36,6 +36,9 @@
     <Filter Include="Scene\Clear">
       <UniqueIdentifier>{b0fb5676-3c60-420d-a9e1-a7ec16868eb3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\Gameover">
+      <UniqueIdentifier>{6046cb7d-bfbd-422e-9daf-8fff597d4015}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\BoxCollider.cpp">
@@ -128,8 +131,12 @@
     <ClCompile Include="Road.cpp">
       <Filter>Scene\Play</Filter>
     </ClCompile>
-    <ClCompile Include="Obstacle.cpp" />
-    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Obstacle.cpp">
+      <Filter>Scene\Play</Filter>
+    </ClCompile>
+    <ClCompile Include="GameoverScene.cpp">
+      <Filter>Scene\Gameover</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -222,8 +229,12 @@
     <ClInclude Include="Road.h">
       <Filter>Scene\Play</Filter>
     </ClInclude>
-    <ClInclude Include="Obstacle.h" />
-    <ClInclude Include="Timer.h" />
+    <ClInclude Include="Obstacle.h">
+      <Filter>Scene\Play</Filter>
+    </ClInclude>
+    <ClInclude Include="GameoverScene.h">
+      <Filter>Scene\Gameover</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">
