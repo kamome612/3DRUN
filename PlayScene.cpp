@@ -17,7 +17,7 @@ void PlayScene::Initialize()
 	Instantiate<Stage>(this);
 	Instantiate<Player>(this);
 	//カメラの視点変更
-	Camera::SetPosition(XMFLOAT3(0, 3.5, -3));
+	Camera::SetPosition(XMFLOAT3(0, 3.5, -5));
 	Camera::SetTarget(XMFLOAT3(0, 0, 5));
 	//timerの表示
 	pText_ = new Text;

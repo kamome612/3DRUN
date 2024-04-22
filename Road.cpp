@@ -13,7 +13,7 @@ Road::~Road()
 void Road::Initialize()
 {
 	//ƒ‚ƒfƒ‹‚Ì“Ç‚İ‚İ
-	hRoad_ = Model::Load("Model\\road.fbx");
+	hRoad_ = Model::Load("Model\\roadl.fbx");
 	assert(hRoad_ >= 0);
 	//ˆÊ’u‚Ì’²®
 	transform_.position_.y = 0;
