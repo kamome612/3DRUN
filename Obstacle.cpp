@@ -7,6 +7,12 @@ Obstacle::Obstacle(GameObject* parent)
 {
 }
 
+Obstacle::Obstacle(GameObject* parent, int x_)
+	:GameObject(parent,"Obstacle"),hObs_(-1)
+{
+	transform_.position_.x = x_;
+}
+
 Obstacle::~Obstacle()
 {
 }
@@ -20,9 +26,9 @@ void Obstacle::Initialize()
 	SphereCollider* collision = new SphereCollider({ 0,0.3,0 }, 0.3f);
 	AddCollider(collision);
 	//位置と向きの調整
-	int x = rand() % 3;//乱数
-	x = 2 * (x - 1);
-	transform_.position_.x = x;
+	//int x = rand() % 3;//乱数
+	//x = 2 * (x - 1);
+	//transform_.position_.x = x;
 	//switch (x) {
 	//case 0://〇〇無 パターン
 	//	transA = -2;

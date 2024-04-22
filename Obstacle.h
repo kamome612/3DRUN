@@ -9,6 +9,8 @@ class Obstacle :
 public:
     //コンストラクタ
     Obstacle(GameObject* parent);
+    //コンストラクタ(x座標付)
+    Obstacle(GameObject* parent,int x_);
 
     //デストラクタ
     ~Obstacle();

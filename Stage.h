@@ -1,11 +1,15 @@
 #pragma once
 #include "Engine/GameObject.h"
+#include "array"
+
 //ステージのもろもろ
 class Stage :
     public GameObject
 {
     double timer_;
     double rTimer_;
+    std::array<int, 3>xa = { -2,0,2 };
+    
 public:
     //コンストラクタ
     Stage(GameObject* parent);

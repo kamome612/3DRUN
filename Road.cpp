@@ -13,16 +13,16 @@ Road::~Road()
 void Road::Initialize()
 {
 	//ÉÇÉfÉãÇÃì«Ç›çûÇ›
-	hRoad_ = Model::Load("Model\\roadb.fbx");
+	hRoad_ = Model::Load("Model\\road.fbx");
 	assert(hRoad_ >= 0);
 	//à íuÇÃí≤êÆ
 	transform_.position_.y = 0;
-	transform_.position_.z = 26;
+	transform_.position_.z = 0;
 }
 
 void Road::Update()
 {
-	transform_.position_.z -= 0.1;
+	//transform_.position_.z -= 0.1;
 	if (transform_.position_.z < -5) {
 		KillMe();
 	}
