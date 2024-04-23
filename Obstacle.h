@@ -6,11 +6,12 @@ class Obstacle :
 {
     int hObs_;
     double timer_;
+    float speed_;
 public:
     //コンストラクタ
     Obstacle(GameObject* parent);
     //コンストラクタ(x座標付)
-    Obstacle(GameObject* parent,int x_);
+    Obstacle(GameObject* parent,int x_ ,float s_);
 
     //デストラクタ
     ~Obstacle();

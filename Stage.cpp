@@ -17,6 +17,7 @@ Stage::~Stage()
 void Stage::Initialize()
 {
 	Instantiate<Road>(this);
+	speed_ = 0.1;
 	//Instantiate<Obstacle>(this);
 }
 
@@ -31,8 +32,12 @@ void Stage::Update()
 	}*/
 	if (timer_ >= 2.0) {
 		std::random_shuffle(std::begin(xa), std::end(xa));
+		if (rTimer_ >= 5.0) {
+			speed_ += 0.05;
+			rTimer_ = 0.0;
+		}
 		for (int i = 0; i < 2; i++) {
-			Instantiate<Obstacle>(this,xa[i]);
+			Instantiate<Obstacle>(this,xa[i],speed_);
 		}
 		timer_ = 0.0;
 	}

@@ -27,22 +27,19 @@ void Player::Initialize()
 
 void Player::Update()
 {
-	timer_ += 1.0 / 60.0;
-	if (timer_ >= 0.5) {
-		//Aが押されたら右に移動
-		if (Input::IsKeyDown(DIK_A)) {
-			timer_ = 0.0;
-			//左に行き過ぎないように
-			if (transform_.position_.x > -2)
-				transform_.position_.x -= 2;
-		}
-		//Dが押されたら左に移動
-		else if (Input::IsKeyDown(DIK_D)) {
-			timer_ = 0.0;
-			//右に行き過ぎないように
-			if (transform_.position_.x < 2)
-				transform_.position_.x += 2;
-		}
+	//Aが押されたら右に移動
+	if (Input::IsKeyDown(DIK_A)) {
+		timer_ = 0.0;
+	//左に行き過ぎないように
+		if (transform_.position_.x > -2)
+			transform_.position_.x -= 2;
+	}
+	//Dが押されたら左に移動
+	else if (Input::IsKeyDown(DIK_D)) {
+		timer_ = 0.0;
+	//右に行き過ぎないように
+		if (transform_.position_.x < 2)
+			transform_.position_.x += 2;
 	}
 }
 

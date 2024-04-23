@@ -7,10 +7,11 @@ Obstacle::Obstacle(GameObject* parent)
 {
 }
 
-Obstacle::Obstacle(GameObject* parent, int x_)
+Obstacle::Obstacle(GameObject* parent, int x_ ,float s_)
 	:GameObject(parent,"Obstacle"),hObs_(-1)
 {
 	transform_.position_.x = x_;
+	speed_ = s_;
 }
 
 Obstacle::~Obstacle()
@@ -23,37 +24,24 @@ void Obstacle::Initialize()
 	hObs_ = Model::Load("Model\\Obs.fbx");
 	assert(hObs_ >= 0);
 	//当たり判定のためのコリジョンの設定
-	SphereCollider* collision = new SphereCollider({ 0,0.3,0 }, 0.3f);
+	SphereCollider* collision = new SphereCollider({ 0,0.5,0 }, 0.4f);
 	AddCollider(collision);
 	//位置と向きの調整
-	//int x = rand() % 3;//乱数
-	//x = 2 * (x - 1);
-	//transform_.position_.x = x;
-	//switch (x) {
-	//case 0://〇〇無 パターン
-	//	transA = -2;
-	//	transB = 0;
-	//	break;
-	//case 1://無〇〇 パターン
-	//	transA = 0;
-	//	transB = 2;
-	//	break;
-	//case 2://〇無〇 パターン
-	//	transA = -2;
-	//	transB = 2;
-	//	break;
-	//default:
-	//	break;
-	//}
 	transform_.position_.y = 1.0;
-	transform_.position_.z = 20;
+	transform_.position_.z = 30;
 	transform_.rotate_.y = 180;
+	transform_.scale_ = XMFLOAT3(1.5, 1.5, 1.5);
 }
 
 void Obstacle::Update()
 {
+	/*timer_ += 1.0 / 60.0;
+	if (timer_ >= 1.0) {
+		speed_ += 0.2;
+		timer_ = 0.0;
+	}*/
 	//画面奥から手前に少しずつ近づいてくる
-    transform_.position_.z -= 0.1;
+    transform_.position_.z -= speed_;
 	if (transform_.position_.z < -5) {
 		KillMe();
 	}

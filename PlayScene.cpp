@@ -27,15 +27,6 @@ void PlayScene::Initialize()
 //çXêV
 void PlayScene::Update()
 {
-	timer_ -= 1.0 / 60.0;
-	if (timer_ <= 0) {
-		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
-		pSceneManager->ChangeScene(SCENE_ID_CLEAR);
-	}
-	if (FindObject("Player") == nullptr) {
-		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
-		pSceneManager->ChangeScene(SCENE_ID_GAMEOVER);
-	}
 }
 
 //ï`âÊ

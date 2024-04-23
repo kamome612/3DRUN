@@ -33,11 +33,8 @@
     <Filter Include="Scene\Play">
       <UniqueIdentifier>{1d557555-3db6-40ef-a0ca-cc8dfd14831f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene\Clear">
-      <UniqueIdentifier>{b0fb5676-3c60-420d-a9e1-a7ec16868eb3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Gameover">
-      <UniqueIdentifier>{6046cb7d-bfbd-422e-9daf-8fff597d4015}</UniqueIdentifier>
+    <Filter Include="Scene\Result">
+      <UniqueIdentifier>{ddc5584f-7812-4a76-a077-512a810fbe04}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -110,9 +107,6 @@
     <ClCompile Include="Engine\VFX.cpp">
       <Filter>01Engine\ResourceManager</Filter>
     </ClCompile>
-    <ClCompile Include="ClearScene.cpp">
-      <Filter>Scene\Clear</Filter>
-    </ClCompile>
     <ClCompile Include="PlayScene.cpp">
       <Filter>Scene\Play</Filter>
     </ClCompile>
@@ -134,8 +128,8 @@
     <ClCompile Include="Obstacle.cpp">
       <Filter>Scene\Play</Filter>
     </ClCompile>
-    <ClCompile Include="GameoverScene.cpp">
-      <Filter>Scene\Gameover</Filter>
+    <ClCompile Include="Result.cpp">
+      <Filter>Scene\Result</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -208,9 +202,6 @@
     <ClInclude Include="Engine\VFX.h">
       <Filter>01Engine\ResourceManager</Filter>
     </ClInclude>
-    <ClInclude Include="ClearScene.h">
-      <Filter>Scene\Clear</Filter>
-    </ClInclude>
     <ClInclude Include="PlayScene.h">
       <Filter>Scene\Play</Filter>
     </ClInclude>
@@ -232,8 +223,8 @@
     <ClInclude Include="Obstacle.h">
       <Filter>Scene\Play</Filter>
     </ClInclude>
-    <ClInclude Include="GameoverScene.h">
-      <Filter>Scene\Gameover</Filter>
+    <ClInclude Include="Result.h">
+      <Filter>Scene\Result</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

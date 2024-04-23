@@ -2,8 +2,7 @@
 #include "../TestScene.h"
 #include "../TitleScene.h"
 #include "../PlayScene.h"
-#include "../ClearScene.h"
-#include "../GameoverScene.h"
+#include "../Result.h"
 #include "Model.h"
 #include "Image.h"
 #include "Audio.h"
@@ -44,8 +43,7 @@ void SceneManager::Update()
 		case SCENE_ID_TEST: Instantiate<TestScene>(this); break;
 		case SCENE_ID_TITLE: Instantiate<TitleScene>(this); break;
 		case SCENE_ID_PLAY: Instantiate<PlayScene>(this); break;
-		case SCENE_ID_CLEAR: Instantiate<ClearScene>(this); break;
-		case SCENE_ID_GAMEOVER: Instantiate<GameoverScene>(this); break;
+		case SCENE_ID_RESULT: Instantiate<ResultScene>(this); break;
 		}
 		Audio::Initialize();
 		currentSceneID_ = nextSceneID_;
