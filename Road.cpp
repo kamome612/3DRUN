@@ -6,6 +6,12 @@ Road::Road(GameObject* parent)
 {
 }
 
+Road::Road(GameObject* parent, int z_)
+	:GameObject(parent,"Road"),hRoad_(-1)
+{
+	transform_.position_.z = z_;
+}
+
 Road::~Road()
 {
 }
@@ -13,16 +19,16 @@ Road::~Road()
 void Road::Initialize()
 {
 	//ÉÇÉfÉãÇÃì«Ç›çûÇ›
-	hRoad_ = Model::Load("Model\\roadl.fbx");
+	hRoad_ = Model::Load("Model\\road.fbx");
 	assert(hRoad_ >= 0);
 	//à íuÇÃí≤êÆ
 	transform_.position_.y = 0;
-	transform_.position_.z = 0;
+	//transform_.position_.z = 0;
 }
 
 void Road::Update()
 {
-	//transform_.position_.z -= 0.1;
+	transform_.position_.z -= 0.1;
 	if (transform_.position_.z < -5) {
 		KillMe();
 	}

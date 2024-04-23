@@ -1,12 +1,11 @@
 #pragma once
 #include "Engine/GameObject.h"
-#include "Engine/Text.h"
 
 //プレイシーンを管理するクラス
 class PlayScene : public GameObject
 {
 	float timer_;
-	Text* pText_;
+	XMFLOAT3 spc = { 0,0,0 };
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）

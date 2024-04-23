@@ -9,6 +9,8 @@ public:
     //コンストラクタ
     Road(GameObject* parent);
 
+    Road(GameObject* parent, int z_);
+
     //デストラクタ
     ~Road();
 

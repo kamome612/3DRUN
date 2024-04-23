@@ -6,7 +6,8 @@
 class Stage :
     public GameObject
 {
-    double timer_;
+    double oTimer_;
+    double osTimer_;
     double rTimer_;
     float speed_;
     std::array<int, 3>xa = { -2,0,2 };

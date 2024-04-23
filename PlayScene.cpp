@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Stage.h"
 #include "Road.h"
+#include "Engine/Input.h"
 #include "Engine/Camera.h"
 #include "Engine/SceneManager.h"
 
@@ -19,20 +20,25 @@ void PlayScene::Initialize()
 	//カメラの視点変更
 	Camera::SetPosition(XMFLOAT3(0, 3.5, -5));
 	Camera::SetTarget(XMFLOAT3(0, 0, 5));
-	//timerの表示
-	pText_ = new Text;
-	pText_->Initialize();
 }
 
 //更新
 void PlayScene::Update()
 {
+	//Playerが死んだらResultSceneに移行
+	if (FindObject("Player") ==nullptr) {
+		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
+		pSceneManager->ChangeScene(SCENE_ID_RESULT);
+	}
+
+	if (Input::IsKey(DIK_UP) ){
+		spc.y += 0.5;
+	}
 }
 
 //描画
 void PlayScene::Draw()
 {
-	pText_->Draw(30, 30, timer_);
 }
 
 //開放

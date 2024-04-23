@@ -4,6 +4,7 @@
 //リザルトシーンを管理するクラス
 class ResultScene : public GameObject
 {
+	int rPict_;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
