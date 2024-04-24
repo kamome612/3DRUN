@@ -3,12 +3,11 @@
 #include "Stage.h"
 #include "Road.h"
 #include "Engine/Input.h"
-#include "Engine/Camera.h"
 #include "Engine/SceneManager.h"
 
 //コンストラクタ
 PlayScene::PlayScene(GameObject* parent)
-	: GameObject(parent, "PlayScene"),timer_(30.0)
+	: GameObject(parent, "PlayScene"),pText_(nullptr)
 {
 }
 
@@ -17,9 +16,9 @@ void PlayScene::Initialize()
 {
 	Instantiate<Stage>(this);
 	Instantiate<Player>(this);
-	//カメラの視点変更
-	Camera::SetPosition(XMFLOAT3(0, 3.5, -5));
-	Camera::SetTarget(XMFLOAT3(0, 0, 5));
+	//Instantiate<test>(this);
+	pText_ = new Text;
+	pText_->Initialize();
 }
 
 //更新
@@ -29,10 +28,6 @@ void PlayScene::Update()
 	if (FindObject("Player") ==nullptr) {
 		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
 		pSceneManager->ChangeScene(SCENE_ID_RESULT);
-	}
-
-	if (Input::IsKey(DIK_UP) ){
-		spc.y += 0.5;
 	}
 }
 

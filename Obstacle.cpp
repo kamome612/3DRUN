@@ -27,7 +27,7 @@ void Obstacle::Initialize()
 	SphereCollider* collision = new SphereCollider({ 0,0.5,0 }, 0.4f);
 	AddCollider(collision);
 	//ˆÊ’u‚ÆŒü‚«‚Ì’²®
-	transform_.position_.y = 1.0;
+	transform_.position_.y = 0.5;
 	transform_.position_.z = 30;
 	transform_.rotate_.y = 180;
 	transform_.scale_ = XMFLOAT3(1.5, 1.5, 1.5);

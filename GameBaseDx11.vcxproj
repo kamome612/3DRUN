@@ -154,6 +154,7 @@
     <ClCompile Include="Result.cpp" />
     <ClCompile Include="Road.cpp" />
     <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="test.cpp" />
     <ClCompile Include="TestScene.cpp" />
     <ClCompile Include="TitleScene.cpp" />
   </ItemGroup>
@@ -187,6 +188,7 @@
     <ClInclude Include="Result.h" />
     <ClInclude Include="Road.h" />
     <ClInclude Include="Stage.h" />
+    <ClInclude Include="test.h" />
     <ClInclude Include="TestScene.h" />
     <ClInclude Include="TitleScene.h" />
   </ItemGroup>

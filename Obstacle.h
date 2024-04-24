@@ -10,7 +10,7 @@ class Obstacle :
 public:
     //コンストラクタ
     Obstacle(GameObject* parent);
-    //コンストラクタ(x座標付)
+    //x座標とspeed付き
     Obstacle(GameObject* parent,int x_ ,float s_);
 
     //デストラクタ

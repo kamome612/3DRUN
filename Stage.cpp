@@ -34,10 +34,10 @@ void Stage::Update()
 		Instantiate<Road>(this,50);
 		rTimer_ = 0.0;
 	}
-	if (oTimer_ >= 1.5) {
+	if (oTimer_ >= 2.0) {
 		std::random_shuffle(std::begin(xa), std::end(xa));
 		if (osTimer_ >= 3.0) {
-			speed_ += 0.02;
+			speed_ += 0.03;
 			osTimer_ = 0.0;
 		}
 		for (int i = 0; i < 2; i++) {

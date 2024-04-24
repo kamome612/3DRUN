@@ -1,6 +1,7 @@
 #include "Result.h"
 #include "Engine/Image.h"
 #include "Engine/Input.h"
+#include "Engine/SceneManager.h"
 
 ResultScene::ResultScene(GameObject* parent)
 	:GameObject(parent,"ResultScene")
@@ -16,6 +17,10 @@ void ResultScene::Initialize()
 
 void ResultScene::Update()
 {
+	if (Input::IsKey(DIK_T)) {
+		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
+		pSceneManager->ChangeScene(SCENE_ID_TITLE);
+	}
 }
 
 void ResultScene::Draw()

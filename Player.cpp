@@ -2,9 +2,17 @@
 #include "Engine/Input.h"
 #include "Engine/Model.h"
 #include "Engine/SphereCollider.h"
+#include "Engine/Camera.h"
+
+enum CAM_TYPE
+{
+	FIXED_TYPE,//固定
+	FPS_TYPE,//三人称
+	MAX_TYPE,//番兵
+};
 
 Player::Player(GameObject* parent)
-	:GameObject(parent,"Player"),hPlayer_(-1)
+	:GameObject(parent,"Player"),hPlayer_(-1),camState_(CAM_TYPE::FIXED_TYPE)
 {
 }
 
@@ -34,12 +42,40 @@ void Player::Update()
 			transform_.position_.x -= 2;
 		}
 	}
-
 	//Dが押されたら右に移動
 	else if (Input::IsKeyDown(DIK_D)) {
 	//右に行き過ぎないように
 		if (transform_.position_.x < 2)
 			transform_.position_.x += 2;
+	}
+
+	if (Input::IsKeyDown(DIK_T))
+	{
+		camState_++;
+		//camState_ = (++camState) & (CAM_TYPE::MAX);
+		if (camState_ == CAM_TYPE::MAX_TYPE)
+		{
+			camState_ = CAM_TYPE::FIXED_TYPE();
+		}
+	}
+
+	switch (camState_)
+	{
+	case CAM_TYPE::FIXED_TYPE:
+	{
+		Camera::SetPosition(XMFLOAT3(0, 3, -5));
+		Camera::SetTarget(XMFLOAT3(0, 0, 10));
+		break;
+	}
+	case CAM_TYPE::FPS_TYPE:
+	{
+		XMFLOAT3 camPos;
+		camPos.x = transform_.position_.x;
+		camPos.y = transform_.position_.y + 1.0;
+		camPos.z = transform_.position_.z + 0.2;
+		Camera::SetPosition(camPos);
+		Camera::SetTarget(XMFLOAT3(camPos.x, 0, 10));
+	}
 	}
 }
 

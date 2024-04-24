@@ -5,10 +5,12 @@ class Road :
     public GameObject
 {
     int hRoad_;
+    float speed_;
 public:
     //コンストラクタ
     Road(GameObject* parent);
 
+    //z座標付
     Road(GameObject* parent, int z_);
 
     //デストラクタ
