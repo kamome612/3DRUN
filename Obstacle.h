@@ -1,18 +1,20 @@
 #pragma once
 #include "Engine/GameObject.h"
+#include "Engine/Text.h"
+#include "CDTIMER.h"
+
 //障害物(パックマン)
 class Obstacle :
     public GameObject
 {
+    Text* pText_;
     int hObs_;
-    double timer_;
     float speed_;
 public:
     //コンストラクタ
     Obstacle(GameObject* parent);
     //x座標とspeed付き
     Obstacle(GameObject* parent,int x_ ,float s_);
-
     //デストラクタ
     ~Obstacle();
 

@@ -17,9 +17,15 @@ void ResultScene::Initialize()
 
 void ResultScene::Update()
 {
+	//T押されたらタイトルシーンに移動
 	if (Input::IsKey(DIK_T)) {
 		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
 		pSceneManager->ChangeScene(SCENE_ID_TITLE);
+	}
+	//R押されたらプレイシーンに移動
+	else if(Input::IsKey(DIK_R)) {
+		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
+		pSceneManager->ChangeScene(SCENE_ID_PLAY);
 	}
 }
 

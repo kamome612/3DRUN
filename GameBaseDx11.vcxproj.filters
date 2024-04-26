@@ -132,6 +132,9 @@
       <Filter>Scene\Result</Filter>
     </ClCompile>
     <ClCompile Include="test.cpp" />
+    <ClCompile Include="CDTIMER.cpp">
+      <Filter>Scene\Play</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -228,6 +231,9 @@
       <Filter>Scene\Result</Filter>
     </ClInclude>
     <ClInclude Include="test.h" />
+    <ClInclude Include="CDTIMER.h">
+      <Filter>Scene\Play</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">

@@ -1,14 +1,15 @@
 #pragma once
 #include "Engine/GameObject.h"
 #include "array"
+#include "CDTIMER.h"
 
 //ステージのもろもろ
 class Stage :
     public GameObject
 {
-    double oTimer_;
-    double osTimer_;
-    double rTimer_;
+    CDTIMER rTimer_;
+    CDTIMER oTimer_;
+    CDTIMER orTimer_;
     float speed_;
     std::array<int, 3>xa = { -2,0,2 };
     

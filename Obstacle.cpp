@@ -3,12 +3,12 @@
 #include "Engine/SphereCollider.h"
 
 Obstacle::Obstacle(GameObject* parent)
-	:GameObject(parent,"Obstacle"),hObs_(-1)
+	:GameObject(parent,"Obstacle"),hObs_(-1),pText_(nullptr)
 {
 }
 
 Obstacle::Obstacle(GameObject* parent, int x_ ,float s_)
-	:GameObject(parent,"Obstacle"),hObs_(-1)
+	:GameObject(parent,"Obstacle"),hObs_(-1),pText_(nullptr)
 {
 	transform_.position_.x = x_;
 	speed_ = s_;
@@ -26,8 +26,8 @@ void Obstacle::Initialize()
 	//当たり判定のためのコリジョンの設定
 	SphereCollider* collision = new SphereCollider({ 0,0.5,0 }, 0.4f);
 	AddCollider(collision);
-	//位置と向きの調整
-	transform_.position_.y = 0.5;
+	//位置や向き、大きさの調整
+	transform_.position_.y = 5;
 	transform_.position_.z = 30;
 	transform_.rotate_.y = 180;
 	transform_.scale_ = XMFLOAT3(1.5, 1.5, 1.5);
@@ -35,13 +35,21 @@ void Obstacle::Initialize()
 
 void Obstacle::Update()
 {
-	/*timer_ += 1.0 / 60.0;
-	if (timer_ >= 1.0) {
-		speed_ += 0.2;
-		timer_ = 0.0;
-	}*/
+	//出てきた時に上から落ちてくるように
+	if (transform_.position_.y > 0.5) {
+		transform_.position_.y -= 0.2;
+	}
+	//落ちすぎてめり込んだりしないように
+	else if(transform_.position_.y < 0.5) {
+		transform_.position_.y = 0.5;
+	}
+
 	//画面奥から手前に少しずつ近づいてくる
-    transform_.position_.z -= speed_;
+	if (transform_.position_.y == 0.5) {
+		transform_.position_.z -= speed_;
+	}
+
+	//画面外に出たら消す
 	if (transform_.position_.z < -5) {
 		KillMe();
 	}
