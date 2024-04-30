@@ -12,7 +12,8 @@ enum CAM_TYPE
 };
 
 Player::Player(GameObject* parent)
-	:GameObject(parent,"Player"),hPlayer_(-1),camState_(CAM_TYPE::FIXED_TYPE)
+	:GameObject(parent,"Player"),hPlayer_(-1),
+	 camState_(CAM_TYPE::FIXED_TYPE)
 {
 }
 
@@ -37,7 +38,7 @@ void Player::Update()
 {
 	//A‚ª‰Ÿ‚³‚ê‚½‚ç¶‚ÉˆÚ“®
 	if (Input::IsKeyDown(DIK_A)) {
-	//¶‚És‚«‰ß‚¬‚È‚¢‚æ‚¤‚É
+	    //¶‚És‚«‰ß‚¬‚È‚¢‚æ‚¤‚É
 		if (transform_.position_.x > -2) {
 			transform_.position_.x -= 2;
 		}

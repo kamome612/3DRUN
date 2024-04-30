@@ -35,6 +35,7 @@ void Obstacle::Initialize()
 
 void Obstacle::Update()
 {
+
 	//o‚Ä‚«‚½Žž‚Éã‚©‚ç—Ž‚¿‚Ä‚­‚é‚æ‚¤‚É
 	if (transform_.position_.y > 0.5) {
 		transform_.position_.y -= 0.2;

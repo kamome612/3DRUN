@@ -21,31 +21,33 @@ void Stage::Initialize()
 	for (int i = 0; i < 11; i++) {
 		Instantiate<Road>(this, i * 5);
 	}
-	rTimer_ = Instantiate<CDTIMER>(this, 0.8);
+	/*rTimer_ = Instantiate<CDTIMER>(this, 0.8);
 	oTimer_ = Instantiate<CDTIMER>(this, 2.0);
-	orTimer_ = Instantiate<CDTIMER>(this, 3.0);
+	osTimer_ = Instantiate<CDTIMER>(this, 3.0);*/
 	//Instantiate<Obstacle>(this);
 }
 
 void Stage::Update()
 {
-
-	if (rTimer_.) {
+	rTimer_ += DEC_TIMER;
+	oTimer_ += DEC_TIMER;
+	osTimer_ += DEC_TIMER;
+	if (rTimer_>=0.8) {
 		Instantiate<Road>(this,50);
-		rTimer_ = 0.0;
+		rTimer_ = 0;
 	}
-	if (oTimer_ >= 2.0) {
+	if (oTimer_>=2.0) {
 		std::random_shuffle(std::begin(xa), std::end(xa));
 		if (speed_ < 2.0) {
-			if (osTimer_ >= 3.0) {
+			if (osTimer_>=3.0) {
 				speed_ += 0.03;
-				osTimer_ = 0.0;
+				osTimer_ = 0;
 			}
 		}
 		for (int i = 0; i < 2; i++) {
 			Instantiate<Obstacle>(this,xa[i],speed_);
 		}
-		oTimer_ = 0.0;
+		oTimer_ = 0;
 	}
 }
 

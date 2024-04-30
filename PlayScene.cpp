@@ -23,7 +23,7 @@ void PlayScene::Initialize()
 
 //XV
 void PlayScene::Update()
-{
+{	
 	//Player‚ª€‚ñ‚¾‚çResultScene‚ÉˆÚs
 	if (FindObject("Player") ==nullptr) {
 		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
