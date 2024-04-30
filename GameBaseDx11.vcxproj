@@ -154,6 +154,7 @@
     <ClCompile Include="PlayScene.cpp" />
     <ClCompile Include="Result.cpp" />
     <ClCompile Include="Road.cpp" />
+    <ClCompile Include="ShakeCamera.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="TestScene.cpp" />
@@ -189,6 +190,7 @@
     <ClInclude Include="PlayScene.h" />
     <ClInclude Include="Result.h" />
     <ClInclude Include="Road.h" />
+    <ClInclude Include="ShakeCamera.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="test.h" />
     <ClInclude Include="TestScene.h" />

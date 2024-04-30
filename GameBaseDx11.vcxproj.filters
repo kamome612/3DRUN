@@ -135,6 +135,7 @@
     <ClCompile Include="CDTIMER.cpp">
       <Filter>Scene\Play</Filter>
     </ClCompile>
+    <ClCompile Include="ShakeCamera.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -234,6 +235,7 @@
     <ClInclude Include="CDTIMER.h">
       <Filter>Scene\Play</Filter>
     </ClInclude>
+    <ClInclude Include="ShakeCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">

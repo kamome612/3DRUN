@@ -1,15 +1,11 @@
 #pragma once
 #include "Engine/GameObject.h"
 #include "array"
-//#include "CDTIMER.h"
 
 //ステージのもろもろ
 class Stage :
     public GameObject
 {
-    /*CDTIMER rTimer_;
-    CDTIMER oTimer_;
-    CDTIMER osTimer_;*/
     double DEC_TIMER = 1.0 / 60.0;
     double rTimer_;
     double oTimer_;

@@ -35,24 +35,25 @@ void Obstacle::Initialize()
 
 void Obstacle::Update()
 {
+	if (FindObject("Player") != nullptr) {
+		//出てきた時に上から落ちてくるように
+		if (transform_.position_.y > 0.5) {
+			transform_.position_.y -= 0.2;
+		}
+		//落ちすぎてめり込んだりしないように
+		else if (transform_.position_.y < 0.5) {
+			transform_.position_.y = 0.5;
+		}
 
-	//出てきた時に上から落ちてくるように
-	if (transform_.position_.y > 0.5) {
-		transform_.position_.y -= 0.2;
-	}
-	//落ちすぎてめり込んだりしないように
-	else if(transform_.position_.y < 0.5) {
-		transform_.position_.y = 0.5;
-	}
+		//画面奥から手前に少しずつ近づいてくる
+		if (transform_.position_.y == 0.5) {
+			transform_.position_.z -= speed_;
+		}
 
-	//画面奥から手前に少しずつ近づいてくる
-	if (transform_.position_.y == 0.5) {
-		transform_.position_.z -= speed_;
-	}
-
-	//画面外に出たら消す
-	if (transform_.position_.z < -5) {
-		KillMe();
+		//画面外に出たら消す
+		if (transform_.position_.z < -5) {
+			KillMe();
+		}
 	}
 }
 

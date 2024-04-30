@@ -6,7 +6,7 @@
 class PlayScene : public GameObject
 {
 	Text* pText_;
-
+	double timer = 0;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）

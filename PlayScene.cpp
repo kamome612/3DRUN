@@ -26,8 +26,11 @@ void PlayScene::Update()
 {	
 	//Player‚ªŽ€‚ñ‚¾‚çResultScene‚ÉˆÚs
 	if (FindObject("Player") ==nullptr) {
-		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
-		pSceneManager->ChangeScene(SCENE_ID_RESULT);
+		if (timer > 2.0) {
+			SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
+			pSceneManager->ChangeScene(SCENE_ID_RESULT);
+		}
+		timer += 1.0 / 60.0;
 	}
 }
 
