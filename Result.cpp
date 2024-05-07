@@ -2,9 +2,10 @@
 #include "Engine/Image.h"
 #include "Engine/Input.h"
 #include "Engine/SceneManager.h"
+#include "Player.h"
 
 ResultScene::ResultScene(GameObject* parent)
-	:GameObject(parent,"ResultScene")
+	:GameObject(parent,"ResultScene"),pText_(nullptr)
 {
 }
 
@@ -13,6 +14,9 @@ void ResultScene::Initialize()
 	//画像データのロード
 	rPict_ = Image::Load("Picture\\RESULT.png");
 	assert(rPict_ >= 0);
+
+	pText_ = new Text;
+	pText_->Initialize();
 }
 
 void ResultScene::Update()

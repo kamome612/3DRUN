@@ -37,17 +37,17 @@ void Player::Initialize()
 void Player::Update()
 {
 	//Aが押されたら左に移動
-	if (Input::IsKeyDown(DIK_A)) {
+	if (Input::IsKey(DIK_A)) {
 	    //左に行き過ぎないように
 		if (transform_.position_.x > -2) {
-			transform_.position_.x -= 2;
+			transform_.position_.x -= 0.05;
 		}
 	}
 	//Dが押されたら右に移動
-	else if (Input::IsKeyDown(DIK_D)) {
+	else if (Input::IsKey(DIK_D)) {
 	//右に行き過ぎないように
 		if (transform_.position_.x < 2)
-			transform_.position_.x += 2;
+			transform_.position_.x += 0.05;
 	}
 
 	if (Input::IsKeyDown(DIK_T))
@@ -77,6 +77,11 @@ void Player::Update()
 		Camera::SetPosition(camPos);
 		Camera::SetTarget(XMFLOAT3(camPos.x, 0, 10));
 	}
+	}
+	timer_ += DEC_TIMER;
+	if (timer_ > 1.0f) {
+		score_ += 10;
+		timer_ = 0;
 	}
 }
 
