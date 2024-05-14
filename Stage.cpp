@@ -40,8 +40,8 @@ void Stage::Update()
 		if (oTimer_ >= 2.0) {
 			std::random_shuffle(std::begin(xa), std::end(xa));
 			if (speed_ < 2.0) {
-				if (osTimer_ >= 3.0) {
-					speed_ += 0.03;
+				if (osTimer_ >= 2.0) {
+					speed_ += 0.1;
 					osTimer_ = 0;
 				}
 			}

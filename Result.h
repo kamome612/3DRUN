@@ -1,10 +1,12 @@
 #pragma once
 #include "Engine/GameObject.h"
+#include "Engine/Text.h"
 
 //リザルトシーンを管理するクラス
 class ResultScene : public GameObject
 {
 	int rPict_;
+	Text* pText_;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
