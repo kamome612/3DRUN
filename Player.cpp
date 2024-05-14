@@ -50,6 +50,7 @@ void Player::Update()
 			transform_.position_.x += 0.05;
 	}
 
+	//‹“_Ø‚è‘Ö‚¦
 	if (Input::IsKeyDown(DIK_T))
 	{
 		camState_++;
