@@ -1,7 +1,6 @@
 #pragma once
 #include "Engine/GameObject.h"
 #include "Engine/Text.h"
-#include "CDTIMER.h"
 
 //障害物(パックマン)
 class Obstacle :
